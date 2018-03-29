@@ -1,15 +1,22 @@
+import java.io._
+import scala.io.Source
+
 object Demo {
   def main(args: Array[String]) {
-    val x = Demo(5)
-    println(x)
+    print("Please enter your input : " )
+    val line = scala.io.StdIn.readLine()
 
-    x match {
-      case Demo(num) => println(x+" is bigger two times than "+num)
+    println("Thanks, you just typed: " + line)
 
-      //unapply is invoked
-      case _ => println("i cannot calculate")
+    val writer = new PrintWriter(new File("Demo.txt" ))
+
+    writer.write(line)
+    writer.close()
+
+    println("Following is the content read:" )
+
+    Source.fromFile("Demo.txt" ).foreach {
+      print
     }
   }
-  def apply(x: Int) = x*2
-  def unapply(z: Int): Option[Int] = if (z%2==0) Some(z/2) else None
 }
