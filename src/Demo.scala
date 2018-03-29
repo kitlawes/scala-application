@@ -1,17 +1,10 @@
+import scala.util.matching.Regex
+
 object Demo {
   def main(args: Array[String]) {
-    val alice = new Person("Alice", 25)
-    val bob = new Person("Bob", 32)
-    val charlie = new Person("Charlie", 32)
+    val pattern = new Regex("abl[ae]\\d+")
+    val str = "ablaw is able1 and cool"
 
-    for (person <- List(alice, bob, charlie)) {
-      person match {
-        case Person("Alice", 25) => println("Hi Alice!")
-        case Person("Bob", 32) => println("Hi Bob!")
-        case Person(name, age) => println(
-          "Age: " + age + " year, name: " + name + "?")
-      }
-    }
+    println((pattern findAllIn str).mkString(","))
   }
-  case class Person(name: String, age: Int)
 }
