@@ -1,23 +1,12 @@
-import java.io._
-
-class Point(val xc: Int, val yc: Int) {
-  var x: Int = xc
-  var y: Int = yc
-
-  def move(dx: Int, dy: Int) {
-    x = x + dx
-    y = y + dy
-  }
-}
-
 object Demo {
   def main(args: Array[String]) {
-    val point = new Point(10, 20)
-    printPoint
+    var x = 30;
+    var y = 10;
 
-    def printPoint{
-      println ("Point x location : " + point.x);
-      println ("Point y location : " + point.y);
+    if( x == 30 ){
+      if( y == 10 ){
+        println("X = 30 and Y = 10");
+      }
     }
   }
 }
