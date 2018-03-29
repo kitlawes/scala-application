@@ -1,10 +1,21 @@
-import scala.util.matching.Regex
+import java.io.FileReader
+import java.io.FileNotFoundException
+import java.io.IOException
 
 object Demo {
   def main(args: Array[String]) {
-    val pattern = new Regex("abl[ae]\\d+")
-    val str = "ablaw is able1 and cool"
+    try {
+      val f = new FileReader("input.txt")
+    } catch {
+      case ex: FileNotFoundException => {
+        println("Missing file exception")
+      }
 
-    println((pattern findAllIn str).mkString(","))
+      case ex: IOException => {
+        println("IO Exception")
+      }
+    } finally {
+      println("Exiting finally...")
+    }
   }
 }
