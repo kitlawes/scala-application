@@ -1,21 +1,15 @@
-import java.io.FileReader
-import java.io.FileNotFoundException
-import java.io.IOException
-
 object Demo {
   def main(args: Array[String]) {
-    try {
-      val f = new FileReader("input.txt")
-    } catch {
-      case ex: FileNotFoundException => {
-        println("Missing file exception")
-      }
+    val x = Demo(5)
+    println(x)
 
-      case ex: IOException => {
-        println("IO Exception")
-      }
-    } finally {
-      println("Exiting finally...")
+    x match {
+      case Demo(num) => println(x+" is bigger two times than "+num)
+
+      //unapply is invoked
+      case _ => println("i cannot calculate")
     }
   }
+  def apply(x: Int) = x*2
+  def unapply(z: Int): Option[Int] = if (z%2==0) Some(z/2) else None
 }
