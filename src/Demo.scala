@@ -1,10 +1,12 @@
 object Demo {
   def main(args: Array[String]) {
-    var a = 10;
+    println( "Returned Value : " + addInt(5,7) );
+  }
 
-    // An infinite loop.
-    while( true ){
-      println( "Value of a: " + a );
-    }
+  def addInt( a:Int, b:Int ) : Int = {
+    var sum:Int = 0
+    sum = a + b
+
+    return sum
   }
 }
