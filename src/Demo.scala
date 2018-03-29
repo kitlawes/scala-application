@@ -1,12 +1,8 @@
 object Demo {
   def main(args: Array[String]) {
-    println( "Returned Value : " + addInt(5,7) );
+    println( "multiplier(1) value = " +  multiplier(1) )
+    println( "multiplier(2) value = " +  multiplier(2) )
   }
-
-  def addInt( a:Int, b:Int ) : Int = {
-    var sum:Int = 0
-    sum = a + b
-
-    return sum
-  }
+  var factor = 3
+  val multiplier = (i:Int) => i * factor
 }
