@@ -1,8 +1,8 @@
 object Demo {
   def main(args: Array[String]) {
-    println( "multiplier(1) value = " +  multiplier(1) )
-    println( "multiplier(2) value = " +  multiplier(2) )
+    val name = "James"
+
+    println(s"Hello, $name")
+    println(s"1 + 1 = ${1 + 1}")
   }
-  var factor = 3
-  val multiplier = (i:Int) => i * factor
 }
